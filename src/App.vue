@@ -52,9 +52,9 @@
               Total cases: {{ nys.cumulative_number_of_positives }}
               <br />
               Total Tests: {{ nys.cumulative_number_of_tests }}
-              <br />
+              <br /><br />
               Last Updated: {{ nys.test_date }}
-              <br /><br /><br />
+              <br /><br />
             </p>
           </div>
         </div>
