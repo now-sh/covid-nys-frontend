@@ -41,6 +41,7 @@
       </div>
       <div v-else>
         <h1 class="text-center mt-5">NYS Data</h1>
+        <h6 class="text-center">Last updated on: {{ data.nys[0].test_date }}</h6>
         <br />
         <br />
         <div class="row border border-primary" v-if="data.nys && data.nys.length">
@@ -52,8 +53,6 @@
               Total cases: {{ nys.cumulative_number_of_positives }}
               <br />
               Total Tests: {{ nys.cumulative_number_of_tests }}
-              <br /><br />
-              Last Updated: {{ nys.test_date }}
               <br /><br />
             </p>
           </div>
@@ -115,6 +114,7 @@ export default {
     this.loading = false;
   }
 };
+
 </script>
 
 <style>
