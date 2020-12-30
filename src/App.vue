@@ -62,10 +62,9 @@
             </p>
           </div>
         </div>
-        <h3 v-else>No data!</h3>
+        <h3 v-else>Something seems to have gone very wrong<br />No data was received!</h3>
         <h2 v-else class="mt-10 text-center">
-          Please wait.....
-          <br />Loading data...
+          Please wait.....<br />Loading the data from {{ url }}...
         </h2>
       </div>
     </div>
