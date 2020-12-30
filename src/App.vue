@@ -44,21 +44,17 @@
         <br />
         <br />
         <div class="row border border-primary" v-if="data.nys && data.nys.length">
-          <div
-            class="card text-center col-4 border border-danger"
-            v-for="nys in data.nys"
-            :key="nys.county"
-          >
-            <h5 class="card-title mt-2">{{ nys.county }}</h5>
+          <div class="card text-center col-4 border border-danger" v-for="nys in data.nys" :key="nys.county">
+            <h4 class="card-title mt-2 purple-text">{{ nys.county }}</h4>
             <p class="card-text mt-2 bt-3">
-              Date: {{ nys.test_date }}
-              <br />
               New cases: {{ nys.new_positives }}
               <br />
               Total cases: {{ nys.cumulative_number_of_positives }}
               <br />
               Total Tests: {{ nys.cumulative_number_of_tests }}
               <br />
+              Last Updated: {{ nys.test_date }}
+              <br /><br /><br />
             </p>
           </div>
         </div>
