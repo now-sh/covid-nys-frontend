@@ -51,11 +51,13 @@
           >
             <h5 class="card-title mt-2">{{ nys.county }}</h5>
             <p class="card-text mt-2 bt-3">
-              Total cases: {{ nys.cumulative_number_of_positives }}
+              Date: {{ nys.test_date }}
               <br />
               New cases: {{ nys.new_positives }}
               <br />
-              Date: {{ nys.test_date }}
+              Total cases: {{ nys.cumulative_number_of_positives }}
+              <br />
+              Total Tests: {{ nys.cumulative_number_of_tests }}
               <br />
             </p>
           </div>
