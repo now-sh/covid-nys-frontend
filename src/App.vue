@@ -42,6 +42,7 @@
       <div v-else>
         <h1 class="text-center mt-5">NYS Data</h1>
         <h6 class="text-center">Last updated on: {{ data.nys[0].test_date }}</h6>
+        <h6>total counties: {{ data.nys.length }} </h6>
         <br />
         <br />
         <div class="row border border-primary" v-if="data.nys && data.nys.length">
