@@ -62,7 +62,7 @@
             </p>
           </div>
         </div>
-        <h3 v-else>Something seems to have gone very wrong<br />No data was received!</h3>
+        <h3 v-else>Something seems to have gone very wrong<br />No data was received!<br /></h3>
         <h2 v-else class="mt-10 text-center">
           Please wait.....<br />Loading the data from {{ url }}...
         </h2>
@@ -96,7 +96,8 @@
 </template>
 
 <script>
-const url = "https://api.casjay.now.sh/api/v1/usa/nys";
+
+const url = 'https://api.casjay.now.sh/api/v1/usa/nys';
 
 export default {
   name: "App",

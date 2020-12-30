@@ -6,11 +6,11 @@ const routes = [{
         title: 'NYS',
         metaTags: [{
             name: 'description',
-            content: 'The home page of our example app.'
+            content: 'New York State COVID 19 info'
           },
           {
             property: 'og:description',
-            content: 'The home page of our example app.'
+            content: 'New York State COVID 19 info'
           }
         ]
       }
