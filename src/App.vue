@@ -45,8 +45,8 @@
         <h6>total counties: {{ data.nys.length }} </h6>
         <br />
         <br />
-        <div class="row border border-primary" v-if="data.nys && data.nys.length">
-          <div class="card text-center col-4 border border-danger" v-for="nys in data.nys" :key="nys.county">
+        <div class="row" v-if="data.nys && data.nys.length">
+          <div class="card text-center card text-center col-md-auto border border-danger" v-for="nys in data.nys" :key="nys.county">
             <h4 class="card-title mt-2 purple-text">{{ nys.county }}</h4>
             <p class="card-text mt-2 bt-3">
               New cases: {{ nys.new_positives }}
@@ -58,7 +58,6 @@
             </p>
           </div>
         </div>
-        <h3 v-else>Something seems to have gone very wrong<br />No data was received!<br /></h3>
         <h2 v-else class="mt-10 text-center">
           Please wait.....<br />Loading the data from {{ url }}...
         </h2>
