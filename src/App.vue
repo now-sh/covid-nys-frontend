@@ -45,7 +45,7 @@
         <h6>total counties: {{ data.nys.length }} </h6>
         <br />
         <br />
-        <div class="row" v-if="data.nys && data.nys.length">
+        <div class="row justify-content-center align-items-center" v-if="data.nys && data.nys.length">
           <div class="card text-center col-md-4 border border-danger" v-for="nys in data.nys" :key="nys.county">
             <h4 class="card-title mt-2 purple-text">{{ nys.county }}</h4>
             <p class="card-text mt-2 bt-3">
