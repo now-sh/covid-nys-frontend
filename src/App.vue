@@ -19,10 +19,10 @@
             <div class="navbar-text"></div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" target="_blank" rel="noopener" href="http://covid.casjay.now.sh">Global Info</a>
+            <a class="nav-link" target="_blank" rel="noopener" href="http://covid.casjay.coffee">Global Info</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" target="_blank" rel="noopener" href="http://wherescovid.casjay.now.sh">Wheres Covid</a>
+            <a class="nav-link" target="_blank" rel="noopener" href="http://wherescovid.casjay.coffee">Wheres Covid</a>
           </li>
         </ul>
         <span class="navbar-text">
@@ -43,15 +43,15 @@
         <div class="purple-text" >
           <h1 class="text-center mt-5">NYS Data</h1>
           <h3 class="text-center">
-                Last updated on:       {{ data.nys.updated }}<br />
-                New cases:             {{ data.nys.todayCases }}<br />
-                Active:                {{ data.nys.active }}<br />
-                Tests:                 {{ data.nys.tests }}
-                Deaths:                {{ data.nys.deaths }}<br />
-                Cases Per Million:     {{ data.nys.casesPerOneMillion }}<br />
-                Deaths Per million:    {{ data.nys.deathsPerOneMillion }}<br />
-                Tests Per million:     {{ data.nys.testsPerOneMillion }}<br />
-                Total Population:      {{ data.nys.population }}<br />
+                <span class="purple-text">updated on:            {{ data.nys.updated }}</span><br />
+                <span class="purple-text">New cases:             {{ data.nys.todayCases }}</span><br />
+                <span class="purple-text">Active:                {{ data.nys.active }}</span><br />
+                <span class="purple-text">Tests:                 {{ data.nys.tests }}</span><br />
+                <span class="purple-text">Deaths:                {{ data.nys.deaths }}</span><br />
+                <span class="purple-text">Cases Per Million:     {{ data.nys.casesPerOneMillion }}</span><br />
+                <span class="purple-text">Deaths Per million:    {{ data.nys.deathsPerOneMillion }}</span><br />
+                <span class="purple-text">Tests Per million:     {{ data.nys.testsPerOneMillion }}</span><br />
+                <span class="purple-text">Total Population:      {{ data.nys.population }}</span><br />
           </h3>
         </div>
         <br />
@@ -88,7 +88,7 @@
 </template>
 
 <script>
-const url = 'https://api.casjay.now.sh/api/v1/usa/nys';
+const url = 'https://api.casjay.coffee/api/v1/usa/nys';
 export default {
   name: "App",
   data: () => ({
@@ -107,9 +107,9 @@ export default {
       this.error = error.message;
     }
     this.loading = false;
-    console.log(this.data)
   }
 };
+setTimeout(() => {}, 5000);
 </script>
 
 <style>
