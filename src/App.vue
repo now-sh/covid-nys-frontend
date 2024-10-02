@@ -28,10 +28,10 @@
         <span class="navbar-text">
           <a
             class="text-success"
-            href="https://covid19tracker.health.ny.gov/views/NYS-COVID19-Tracker/NYSDOHCOVID-19Tracker-Map?%3Aembed=yes&%3Atoolbar=no"
+            href="https://disease.sh"
             target="_blank"
             rel="noopener"
-          >Data Provided by NYS Health Department</a>
+          >Data Provided by Disease.sh</a>
         </span>
       </div>
     </nav>
@@ -40,28 +40,25 @@
         <h2 class="error">Error: {{ error }}</h2>
       </div>
       <div v-else>
-        <h1 class="text-center mt-5">NYS Data</h1>
-        <h6 class="text-center">Last updated on: {{ data.nys[0].test_date }}</h6>
-        <h6>total counties: {{ data.nys.length }} </h6>
-        <br />
-        <br />
-        <div class="row justify-content-center align-items-center" v-if="data.nys && data.nys.length">
-          <div class="card text-center col-lg-4 border border-danger" v-for="nys in data.nys" :key="nys.county">
-            <h4 class="card-title mt-2 purple-text">{{ nys.county }}</h4>
-            <p class="card-text mt-2 bt-3">
-              New cases: {{ nys.new_positives }}
-              <br />
-              Total cases: {{ nys.cumulative_number_of_positives }}
-              <br />
-              Total Tests: {{ nys.cumulative_number_of_tests }}
-              <br /><br />
-            </p>
-          </div>
+        <div class="purple-text" >
+          <h1 class="text-center mt-5">NYS Data</h1>
+          <h3 class="text-center">
+                Last updated on:       {{ data.nys.updated }}<br />
+                New cases:             {{ data.nys.todayCases }}<br />
+                Active:                {{ data.nys.active }}<br />
+                Tests:                 {{ data.nys.tests }}
+                Deaths:                {{ data.nys.deaths }}<br />
+                Cases Per Million:     {{ data.nys.casesPerOneMillion }}<br />
+                Deaths Per million:    {{ data.nys.deathsPerOneMillion }}<br />
+                Tests Per million:     {{ data.nys.testsPerOneMillion }}<br />
+                Total Population:      {{ data.nys.population }}<br />
+          </h3>
         </div>
+        <br />
+      </div>
         <h2 v-else class="mt-10 text-center">
           Please wait.....<br />Loading the data from {{ url }}...
         </h2>
-      </div>
     </div>
     <div class="purple-text text-center">
       <br />
@@ -82,8 +79,8 @@
         target="_blank"
         rel="noopener"
         class="text-danger"
-        href="http://data.ny.gov"
-      > data.ny.gov </a>
+        href="http://disease.sh"
+      > disease.sh </a>
       <br />
       <br />
     </div>
@@ -91,9 +88,7 @@
 </template>
 
 <script>
-
 const url = 'https://api.casjay.now.sh/api/v1/usa/nys';
-
 export default {
   name: "App",
   data: () => ({
@@ -112,9 +107,9 @@ export default {
       this.error = error.message;
     }
     this.loading = false;
+    console.log(this.data)
   }
 };
-
 </script>
 
 <style>
