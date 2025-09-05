@@ -1,14 +1,14 @@
-import Vue from 'vue';
-import App from './App.vue';
-import store from './store';
-import "bootstrap";
-import "../node_modules/bootswatch/dist/darkly/bootstrap.min.css";
-import "jquery";
-import "popper.js"
+import { createApp } from 'vue'
+import App from './App.vue'
+import store from './store'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootswatch/dist/darkly/bootstrap.min.css'
+import * as bootstrap from 'bootstrap'
 
-Vue.config.productionTip = false
+window.bootstrap = bootstrap
 
-new Vue({
-  store,
-  render: h => h(App)
-}).$mount('#app')
+const app = createApp(App)
+
+app.use(store)
+
+app.mount('#app')
