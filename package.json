@@ -12,7 +12,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "deploy": "gitcommit deploy && vercel --prod"
+    "deploy": "gitcommit deploy && vercel && vercel --prod"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
