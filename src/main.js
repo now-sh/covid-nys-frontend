@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import store from './store'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootswatch/dist/darkly/bootstrap.min.css'
+import './assets/dracula-theme.css'
 import * as bootstrap from 'bootstrap'
 
 window.bootstrap = bootstrap
