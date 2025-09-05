@@ -119,17 +119,17 @@
                          aria-label="Total COVID-19 cases in New York State">
                   <div class="stat-icon" aria-hidden="true">🦠</div>
                   <h3 class="stat-label">Total Cases</h3>
-                  <div class="stat-value" aria-live="polite">{{ formatNumber(data?.nys?.cases) }}</div>
+                  <div class="stat-value" aria-live="polite">{{ formatNumber(data?.cases) }}</div>
                 </article>
               </div>
 
-              <!-- Active Cases -->
+              <!-- Recovered -->
               <div class="col-6 col-sm-4 col-lg-3">
-                <article class="stat-card active" tabindex="0" role="article" 
-                         aria-label="Active COVID-19 cases in New York State">
-                  <div class="stat-icon" aria-hidden="true">⚠️</div>
-                  <h3 class="stat-label">Active Cases</h3>
-                  <div class="stat-value" aria-live="polite">{{ formatNumber(data?.nys?.active) }}</div>
+                <article class="stat-card recovered" tabindex="0" role="article" 
+                         aria-label="Total recovered COVID-19 cases in New York State">
+                  <div class="stat-icon" aria-hidden="true">✅</div>
+                  <h3 class="stat-label">Recovered</h3>
+                  <div class="stat-value" aria-live="polite">{{ formatNumber(data?.recovered) }}</div>
                 </article>
               </div>
 
@@ -139,27 +139,7 @@
                          aria-label="Total COVID-19 deaths in New York State">
                   <div class="stat-icon" aria-hidden="true">💀</div>
                   <h3 class="stat-label">Deaths</h3>
-                  <div class="stat-value" aria-live="polite">{{ formatNumber(data?.nys?.deaths) }}</div>
-                </article>
-              </div>
-
-              <!-- Tests -->
-              <div class="col-6 col-sm-4 col-lg-3">
-                <article class="stat-card tests" tabindex="0" role="article" 
-                         aria-label="Total COVID-19 tests in New York State">
-                  <div class="stat-icon" aria-hidden="true">🧪</div>
-                  <h3 class="stat-label">Tests</h3>
-                  <div class="stat-value" aria-live="polite">{{ formatNumber(data?.nys?.tests) }}</div>
-                </article>
-              </div>
-
-              <!-- Today's Cases -->
-              <div class="col-6 col-sm-4 col-lg-3">
-                <article class="stat-card today-cases" tabindex="0" role="article" 
-                         aria-label="New cases reported today in New York State">
-                  <div class="stat-icon" aria-hidden="true">📈</div>
-                  <h3 class="stat-label">Today's Cases</h3>
-                  <div class="stat-value" aria-live="polite">+{{ formatNumber(data?.nys?.todayCases) }}</div>
+                  <div class="stat-value" aria-live="polite">{{ formatNumber(data?.deaths) }}</div>
                 </article>
               </div>
 
@@ -169,7 +149,7 @@
                          aria-label="New York State population">
                   <div class="stat-icon" aria-hidden="true">👥</div>
                   <h3 class="stat-label">Population</h3>
-                  <div class="stat-value" aria-live="polite">{{ formatNumber(data?.nys?.population) }}</div>
+                  <div class="stat-value" aria-live="polite">{{ formatNumber(data?.population) }}</div>
                 </article>
               </div>
 
@@ -179,7 +159,7 @@
                          aria-label="Cases per million in New York State">
                   <div class="stat-icon" aria-hidden="true">📊</div>
                   <h3 class="stat-label">Cases Per Million</h3>
-                  <div class="stat-value" aria-live="polite">{{ formatNumber(data?.nys?.casesPerOneMillion) }}</div>
+                  <div class="stat-value" aria-live="polite">{{ formatNumber(data?.casesPerOneMillion) }}</div>
                 </article>
               </div>
 
@@ -189,7 +169,7 @@
                          aria-label="Deaths per million in New York State">
                   <div class="stat-icon" aria-hidden="true">📉</div>
                   <h3 class="stat-label">Deaths Per Million</h3>
-                  <div class="stat-value" aria-live="polite">{{ formatNumber(data?.nys?.deathsPerOneMillion) }}</div>
+                  <div class="stat-value" aria-live="polite">{{ formatNumber(data?.deathsPerOneMillion) }}</div>
                 </article>
               </div>
             </div>
@@ -199,10 +179,10 @@
           <footer class="data-footer text-center">
             <p class="update-time">
               <span class="update-icon" aria-hidden="true">🕒</span>
-              <span>Last updated: <time :datetime="new Date(data?.nys?.updated).toISOString()">{{ formatDate(data?.nys?.updated) }}</time></span>
+              <span>Last updated: <time :datetime="new Date(data?.updated).toISOString()">{{ formatDate(data?.updated) }}</time></span>
             </p>
             <a
-              href="https://api.casjay.coffee/api/v1/usa/nys"
+              href="https://disease.sh/v3/covid-19/states/New%20York"
               target="_blank"
               rel="noopener noreferrer"
               class="btn btn-outline-info btn-sm api-link"
@@ -300,7 +280,7 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 
-const url = 'https://api.casjay.coffee/api/v1/usa/nys'
+const url = 'https://disease.sh/v3/covid-19/states/New%20York'
 const loading = ref(false)
 const data = ref(null)
 const error = ref('')
