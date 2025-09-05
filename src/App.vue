@@ -101,6 +101,8 @@
         <div v-else class="data-container">
           <header class="page-header text-center">
             <h1 id="nys-stats-heading" class="page-title">
+              <span role="img" aria-label="Medical symbols">😷 🏥 🦠 🧫</span>
+              <br />
               New York State COVID-19 Statistics
             </h1>
             <div class="alert alert-info">
